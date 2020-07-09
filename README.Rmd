@@ -1,7 +1,7 @@
 # r_markdown_examples
 test
 
-```{r echo = FALSE, results = "asis"}
+```{r}
 
 x <- seq(-pi,pi,0.01)
 plot(x, sin(x))
