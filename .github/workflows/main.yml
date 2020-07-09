@@ -16,11 +16,13 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown
         run: Rscript -e 'install.packages("rmarkdown")'
-      - name: Render README
-        run: Rscript -e 'rmarkdown::render("README.Rmd")'
+      - name: Render Rmd files
+        run: |
+          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} \
+            | xargs -I % Rscript -e 'rmarkdown::render("%")'
       - name: Commit results
         run: |
           git status
-          git add README.md README_files
-          git commit -m 'Re-build README.Rmd' || echo "No changes to commit"
+          git add **/README.md **/README_files
+          git commit -m 'Re-build Rmd files' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
