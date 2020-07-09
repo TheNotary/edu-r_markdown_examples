@@ -2,8 +2,7 @@
 output: github_document
 ---
 
-# r_markdown_examples
-test 2
+# Markdown Examples
 
 ```{r}
 
