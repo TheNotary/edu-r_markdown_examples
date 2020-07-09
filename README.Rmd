@@ -6,8 +6,8 @@ output: github_document
 
 ```{r}
 
-x <- seq(-pi,pi,0.01)
-plot(x, sin(x))
-       
+    x <- seq(-pi,pi,0.01)
+    plot(x, sin(x))
+
 ```
 
