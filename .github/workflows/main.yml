@@ -19,7 +19,7 @@ jobs:
       - name: Render Rmd files
         run: |
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }} \
-            | xargs -I % Rscript -e 'rmarkdown::render("%")'
+          | xargs -I % Rscript -e 'rmarkdown::render("%")'
       - name: Commit results
         run: |
           git status
