@@ -2,7 +2,6 @@
 output: github_document
 ---
 
-
 ```{r}
 library(ggplot2)
 library(xkcd)
