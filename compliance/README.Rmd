@@ -1,0 +1,16 @@
+---
+output: github_document
+---
+
+library(ggplot2)
+library(xkcd)
+
+mydf <- data.frame(x=c(0, 60, 60.1, 200), y=c(10, 30, 1, 1))
+xrange <- range(mydf$x)
+yrange <- range(mydf$y)
+ggplot(data=mydf, aes(x=x, y=y)) +
+  geom_line() +
+  xkcdaxis(xrange, yrange)  + 
+  theme(text = element_text(size = 16, family = "xkcd")) +
+  labs(x = "Time spent reading compliance policy - seconds",
+       y = "Confidence building \ncompliant software")
