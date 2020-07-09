@@ -1,8 +1,8 @@
 on:
   push:
     paths:
-      - README.Rmd
-      - **/README.Rmd
+      - 'README.Rmd'
+      - '**/README.Rmd'
 
 name: Render README
 
