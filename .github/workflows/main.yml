@@ -16,6 +16,14 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown
         run: Rscript -e 'install.packages("rmarkdown")'
+      - name: Learn the game
+        run: "echo 'hello'"
+      - name: Learn the game
+        run: echo ${{ github.sha }}
+      - name: Learn the game
+        run: git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+      - name: Render Rmd files for real
+        run: "git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | xargs -I % Rscript -e 'rmarkdown::render(\"%\")'"
       - name: Render Rmd files
         run: |
           git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
