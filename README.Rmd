@@ -1,0 +1,10 @@
+# r_markdown_examples
+
+
+```{r echo = FALSE, results = "asis"}
+
+x <- seq(-pi,pi,0.01)
+plot(x, sin(x))
+       
+```
+
